@@ -21,7 +21,10 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
-      
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.5.6 # Replace with your desired version 
     - name: Login to Azure
       uses: azure/login@v1
       with:
